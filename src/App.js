@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 
 const App = () => (
-  <div>My App</div>
+  <div>Redux test</div>
 );
-
 
 export default App;
