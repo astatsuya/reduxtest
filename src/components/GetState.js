@@ -1,16 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    addInfo: state.addInfo,
+    books: state.books,
   };
 };
 
-const Connectedbutton = ({ addInfo }) => {
+const Connectedbutton = ({ books }) => {
   return (
     <div>
       GetState
+      <p>
+      {books.book.map(book => book.title)}
+      </p>
     </div>
   );
 };
