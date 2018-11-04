@@ -1,9 +1,17 @@
 export const ADD_INFO = 'ADD_INFO';
+export const NEW_ID = 'NEW_ID';
 
 export const addInfo = info => ({
   type: ADD_INFO,
   payload: info,
 });
+
+export const newId = id => ({
+  type: NEW_ID,
+  id: id++,
+});
+
+
 //
 // import uuid from 'uuid';
 //

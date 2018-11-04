@@ -50,12 +50,16 @@ import { ADD_INFO } from './actions';
 const initialState = {
   book: [
     {
-      title: 'code0',
-      age: 1999,
+      title: '1st ',
+      age: 100,
     },
     {
-      title: 'acd',
-      age: 2002,
+      title: '2nd ',
+      age: 300,
+    },
+    {
+      title: '3rd ',
+      age: 200,
     },
   ],
 };

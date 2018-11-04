@@ -5,7 +5,9 @@ import { addInfo } from './actions';
 window.store = store;
 window.addInfo = addInfo;
 
-
+store.subscribe(() => {
+  console.log(store.getState())
+})
 
 // window.store = store;
 // window.addBook = addBook;

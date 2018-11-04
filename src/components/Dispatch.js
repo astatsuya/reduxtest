@@ -8,11 +8,18 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const Connectedbutton = ({addInfo}) => {
+const Connectedbutton = ({ addInfo }) => {
+  const dispatchContents = {
+    title: 'dispatch ',
+    age: 432,
+  };
   return (
     <div>
-      Dispatch
-      <button onClick={() => addInfo({title: 'dispatchfromReact'})} />
+      <br />
+      addInfo
+      <button onClick={() => addInfo(dispatchContents)}>
+        add title
+      </button>
     </div>
   );
 };

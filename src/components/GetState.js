@@ -3,17 +3,22 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
   return {
-    books: state.books,
+    books: state.books.book,
   };
 };
 
 const Connectedbutton = ({ books }) => {
   return (
     <div>
-      GetState
+      <br />
+      stateをそのまま表示
       <p>
-      {books.book.map(book => book.title)}
+      {books.map(book => book.title)}
       </p>
+      <p>
+      {books.map(book => book.age)}
+      </p>
+      
     </div>
   );
 };
