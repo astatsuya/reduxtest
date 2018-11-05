@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 
 
 const Connectedbutton = ({ books }) => {
-  let showing = 1;
-
-  const eee = () => {
-    books.sort((a, b) =>  a.age - b.age);
-    console.log('ci');
-  };
+  let showing ;
+  if (showing) {
+    books.sort((a, b) => a.title - b.title )
+  } else {
+    books.sort((a, b) => a.age - b.age)
+  }
 
   return (
     <div>
@@ -22,11 +22,11 @@ const Connectedbutton = ({ books }) => {
 
       </p>
       <p>
-        {eee()}
+        {books.age}
       </p>
       <br />
       <p>
-        <button onClick={eee} >filter</button>
+        <button  >filter</button>
       </p>
     </div>
   );
