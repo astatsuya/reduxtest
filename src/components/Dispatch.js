@@ -20,9 +20,12 @@ const Connectedbutton = ({ addInfo }) => {
       <button onClick={() => addInfo(dispatchContents)}>
         add title
       </button>
+      <br />
     </div>
   );
 };
+
+
 
 // class Connectedbutton extends React.Component {
 //   constructor(props) {

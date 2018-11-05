@@ -1,16 +1,23 @@
 export const ADD_INFO = 'ADD_INFO';
-export const NEW_ID = 'NEW_ID';
+// export const NEW_ID = 'NEW_ID';
+export const FILTER = 'FILTER';
+
+// let currentId = 3;
+//
+// const newId = () => {
+//   return currentId++;
+// };
 
 export const addInfo = info => ({
   type: ADD_INFO,
   payload: info,
+  // actionid: newId(),
 });
 
-export const newId = id => ({
-  type: NEW_ID,
-  id: id++,
+export const filter = filtercase => ({
+  type: FILTER,
+  filter: filtercase,
 });
-
 
 //
 // import uuid from 'uuid';

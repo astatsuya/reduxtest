@@ -4,7 +4,7 @@ import Dispatch from './components/Dispatch';
 import GetState from './components/GetState';
 
 const App = () => (
-  <div>
+  <div className="App">
     Redux test
     <Dispatch />
     <GetState />
