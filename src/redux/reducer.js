@@ -6,17 +6,17 @@ const initialState = {
     {
       title: 'ccc ',
       age: 100,
-      // id: 0,
+      id: 0,
     },
     {
       title: 'bbb ',
       age: 300,
-      // id: 1,
+      id: 1,
     },
     {
       title: 'aaa ',
       age: 200,
-      // id: 2,
+      id: 2,
     },
   ],
 };
@@ -24,9 +24,6 @@ const initialState = {
 const books = (state = initialState, action) => {
   switch (action.type) {
     case ADD_INFO:
-      // let newPayload = action.payload;
-      // newPayload.id = action.actionid;
-
       return {
         ...state,
         book: [

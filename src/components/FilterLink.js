@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { filter } from '../redux/actions';
+import { sort, filter } from '../redux/actions';
 import FilterParent from './FilterButton';
 
 const mapDispatchToProps = (dispatch) => {

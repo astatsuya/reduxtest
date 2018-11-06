@@ -10,30 +10,18 @@ const mapDispatchToProps = dispatch => {
 
 const Connectedbutton = ({ addInfo }) => {
   const dispatchContents = {
-    title: 'dispatch ',
+    title: 'dis ',
     age: 252,
+    id: 4,
   };
   return (
     <div>
-      <br />
-      addInfo
-      <button onClick={() => addInfo(dispatchContents)}>
-        add title
+      <button type="button" onClick={() => addInfo(dispatchContents)}>
+        addInfo
       </button>
-      <br />
     </div>
   );
 };
-
-
-
-// class Connectedbutton extends React.Component {
-//   constructor(props) {
-//     super(props);
-//
-//     this
-//   }
-// }
 
 const Dispatch = connect(null, mapDispatchToProps)(Connectedbutton);
 

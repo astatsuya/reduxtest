@@ -25,11 +25,11 @@ class FilterCondition extends React.Component {
       <div>
         Sort:
         <select id="sortContents" onChange={this.sortChange}>
-          <option value="ALL">ALL</option>
+          <option value="ALL">ID</option>
           <option value="BOOKS">BOOKS</option>
           <option value="AGE">AGE</option>
         </select>
-        <br />
+        {" "}
         filter:
         <select id="filterContents" onChange={this.filterChange}>
           <option value="ALL">ALL</option>

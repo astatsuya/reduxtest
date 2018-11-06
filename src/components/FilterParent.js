@@ -40,13 +40,11 @@ class FilterParent extends React.Component {
 
   handleClick() {
     const sort = this.state.sort;
-    console.log(sort);
     this.props.sortChange(sort)
   }
 
   filterClick() {
     const filter = this.state.filter;
-    console.log(filter);
     this.props.filterChange(filter)
   }
 
@@ -58,8 +56,10 @@ class FilterParent extends React.Component {
           filterChange={this.filterChangeCondition}
         />
         <FilterButton
-          sortClick={this.handleClick} sortContents={this.state.sort}
-          filterClick={this.filterClick} filterContents={this.state.filter}
+          sortClick={this.handleClick}
+          sortContents={this.state.sort}
+          filterClick={this.filterClick}
+          filterContents={this.state.filter}
         />
       </div>
     );

@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import changeViewState from './changeViewState';
-
 
 const changeViewState = (state, sort) => {
   switch (sort) {
@@ -26,15 +24,14 @@ const changeViewState = (state, sort) => {
   }
 };
 
-
 const changeFilter = (state, filtered) => {
   switch (filtered) {
     case 'ALL':
       return state;
     case 'aaa ':
-      return state.filter(a => a.title === "aaa ");
+      return state.filter(a => a.title === 'aaa ');
     case 'bbb ':
-      return state.filter(a => a.age === "bbb ");
+      return state.filter(a => a.title === 'bbb ');
     default:
       return state;
   }
@@ -44,37 +41,30 @@ const mapStateToProps = (state) => {
   return {
     sorted: changeViewState(state.books.book, state.sort),
     filtered: changeFilter(state.books.book, state.filter),
-  }
+    state,
+  };
 };
-
-
 
 const Connectedbutton = ({ sorted, filtered }) => {
   return (
     <div>
-      <br />
-      stateをそのまま表示
+      sortだけした結果
       <p>
         {sorted.map(book => book.title)}
       </p>
       <p>
         {sorted.map(book => book.age)}
       </p>
+      sortしてfilterした結果
       <p>
         {filtered.map(book => book.title)}
       </p>
       <p>
         {filtered.map(book => book.age)}
       </p>
-      <p>
-
-      </p>
-
-      <br />
     </div>
   );
 };
-
 
 const GetState = connect(mapStateToProps)(Connectedbutton);
 

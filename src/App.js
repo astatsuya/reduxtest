@@ -6,9 +6,11 @@ import FilterParent from './components/FilterParent';
 
 const App = () => (
   <div className="App">
-    Redux test
+    Redux Sort and Filter test
     <Dispatch />
+    <br />
     <GetState />
+    <br />
     <FilterParent />
   </div>
 );
