@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { filter } from '../redux/reducer';
 
 class FilterCondition extends React.Component {
   constructor(props) {

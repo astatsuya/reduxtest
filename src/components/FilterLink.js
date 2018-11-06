@@ -1,27 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { filter } from '../redux/reducer';
-
-
-// const mapStateToProps = (state, ownProps) => {
-//   return {
-//     active: ownProps.filter === state.visibilityFilter
-//   }
-// }
-
-
+import { filter } from '../redux/actions';
+import FilterParent from './FilterButton';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: () => {
-      dispatch(filter(ownProps.filter));
-    }
+    filterChange: ownProps.filtercase => dispatch(filter(ownProps.filtercase)),
   };
 };
 
 const FilterLink = connect(
   null,
   mapDispatchToProps,
-)(Link)
+)(FilterParent);
 
 export default FilterLink;

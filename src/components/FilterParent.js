@@ -1,6 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { filter } from '../redux/actions';
 import FilterCondition from './FilterCondition';
 import FilterButton from './FilterButton';
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    filterChange: filtercase => dispatch(filter(filtercase)),
+  };
+};
 
 class FilterParent extends React.Component {
   constructor(props) {
@@ -23,6 +31,7 @@ class FilterParent extends React.Component {
   handleClick() {
     const filter = this.state.filter;
     console.log(filter);
+    this.props.filterChange(filter)
   }
 
   render() {
@@ -35,5 +44,9 @@ class FilterParent extends React.Component {
   }
 }
 
+const FilterLink = connect(
+  null,
+  mapDispatchToProps,
+)(FilterParent);
 
-export default FilterParent;
+export default FilterLink;
