@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import FilterButton from './FilterButton';
 
 
 const Connectedbutton = ({ books }) => {
@@ -25,9 +26,6 @@ const Connectedbutton = ({ books }) => {
         {books.age}
       </p>
       <br />
-      <p>
-        <button  >filter</button>
-      </p>
     </div>
   );
 };
