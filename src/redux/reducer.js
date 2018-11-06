@@ -1,20 +1,20 @@
 import { combineReducers } from 'redux';
-import { ADD_INFO, FILTER } from './actions';
+import { ADD_INFO, SORT, FILTER } from './actions';
 
 const initialState = {
   book: [
     {
-      title: '1st ',
+      title: 'ccc ',
       age: 100,
       // id: 0,
     },
     {
-      title: '2nd ',
+      title: 'bbb ',
       age: 300,
       // id: 1,
     },
     {
-      title: '3rd ',
+      title: 'aaa ',
       age: 200,
       // id: 2,
     },
@@ -39,6 +39,15 @@ const books = (state = initialState, action) => {
   }
 };
 
+export const sort = (state = { sort: 'ALL' }, action) => {
+  switch (action.type) {
+    case SORT:
+      return action.sort;
+    default:
+      return state;
+  }
+};
+
 export const filter = (state = { filter: 'ALL' }, action) => {
   switch (action.type) {
     case FILTER:
@@ -50,6 +59,7 @@ export const filter = (state = { filter: 'ALL' }, action) => {
 
 const rootReducer = combineReducers({
   books,
+  sort,
   filter,
 });
 

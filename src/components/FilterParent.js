@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { filter } from '../redux/actions';
+import { sort, filter } from '../redux/actions';
 import FilterCondition from './FilterCondition';
 import FilterButton from './FilterButton';
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    sortChange: sortcase => dispatch(sort(sortcase)),
     filterChange: filtercase => dispatch(filter(filtercase)),
   };
 };
@@ -15,20 +16,35 @@ class FilterParent extends React.Component {
     super(props);
 
     this.state = {
+      sort: 'ALL',
       filter: 'ALL',
     };
 
     this.changeCondition = this.changeCondition.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.filterChangeCondition = this.filterChangeCondition.bind(this);
+    this.filterClick = this.filterClick.bind(this);
   }
 
   changeCondition(event) {
+    this.setState({
+      sort: event,
+    });
+  }
+
+  filterChangeCondition(event) {
     this.setState({
       filter: event,
     });
   }
 
   handleClick() {
+    const sort = this.state.sort;
+    console.log(sort);
+    this.props.sortChange(sort)
+  }
+
+  filterClick() {
     const filter = this.state.filter;
     console.log(filter);
     this.props.filterChange(filter)
@@ -37,8 +53,14 @@ class FilterParent extends React.Component {
   render() {
     return (
       <div>
-        <FilterCondition onChange={this.changeCondition} />
-        <FilterButton onClick={this.handleClick} filterContents={this.state.filter}/>
+        <FilterCondition
+          sortChange={this.changeCondition}
+          filterChange={this.filterChangeCondition}
+        />
+        <FilterButton
+          sortClick={this.handleClick} sortContents={this.state.sort}
+          filterClick={this.filterClick} filterContents={this.state.filter}
+        />
       </div>
     );
   }

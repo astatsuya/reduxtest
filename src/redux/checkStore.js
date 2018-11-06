@@ -1,9 +1,10 @@
 import store from './store';
-import { addInfo, filter } from './actions';
+import { addInfo, sort, filter } from './actions';
 // import { addBook, removeBook, filterText } from './actions.js';
 
 window.store = store;
 window.addInfo = addInfo;
+window.sort = sort;
 window.filter = filter;
 
 store.subscribe(() => {

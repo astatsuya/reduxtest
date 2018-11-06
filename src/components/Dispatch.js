@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => {
 const Connectedbutton = ({ addInfo }) => {
   const dispatchContents = {
     title: 'dispatch ',
-    age: 432,
+    age: 252,
   };
   return (
     <div>

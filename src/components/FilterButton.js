@@ -1,9 +1,10 @@
 import React from 'react';
 
-const FilterButton = ({ onClick }) => {
+const FilterButton = ({ sortClick, filterClick }) => {
   return (
     <div>
-      <button type="button" onClick={onClick}>FIlter</button>
+      <button type="button" onClick={sortClick}>Sort</button>
+      <button type="button" onClick={filterClick}>Filter</button>
     </div>
   );
 };

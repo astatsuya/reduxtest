@@ -3,14 +3,15 @@ import { connect } from 'react-redux';
 import { filter } from '../redux/actions';
 import FilterParent from './FilterButton';
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    filterChange: ownProps.filtercase => dispatch(filter(ownProps.filtercase)),
+    sortChange: sortcase => dispatch(sort(sortcase)),
+    filterChange: filtercase => dispatch(filter(filtercase)),
   };
 };
 
 const FilterLink = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(FilterParent);
 
